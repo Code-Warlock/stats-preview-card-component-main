@@ -87,13 +87,13 @@ main>section.content-panel>div.achievements>div::before {
   color: var(--text-white-900);
 }
 
-main>section.preview {
+main>div.preview {
   background-color: var(--accent);
   min-height: 100%;
   align-self: stretch;
 }
 
-main>section.preview>picture {
+main>div.preview>picture {
   mix-blend-mode: multiply;
 }
 
@@ -112,7 +112,7 @@ main>section.preview>picture {
     grid-template-rows: 1fr 1fr;
   }
 
-  main>section.preview {
+  main>div.preview {
     min-height: 50%;
     grid-row: 1;
   }
@@ -146,7 +146,7 @@ main>section.preview>picture {
     max-width: 100%;
   }
 
-  main>section.preview {
+  main>div.preview {
     grid-area: p;
   }
 
