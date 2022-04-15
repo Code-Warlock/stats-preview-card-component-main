@@ -43,7 +43,7 @@ main>section.content-panel {
   gap: 1.5rem;
 }
 
-main>section.content-panel>div.heading {
+main>section.content-panel>div.heading  , main>section.content-panel>div.heading > h1 {
   font-size: var(--font-size-h1);
   font-family: var(--lexend);
   font-weight: 700;
@@ -51,11 +51,11 @@ main>section.content-panel>div.heading {
   margin-bottom: 10px;
 }
 
-main>section.content-panel>div.heading>span.insights {
+main>section.content-panel>div.heading span.insights {
   color: var(--accent);
 }
 
-main>section.content-panel>div.content {
+main>section.content-panel>div.content h1 {
   font-family: var(--inter);
   font-weight: 400;
   color: var(--text-white-700);
@@ -63,16 +63,18 @@ main>section.content-panel>div.content {
   margin-bottom: 2.4rem;
 }
 
-main>section.content-panel>div.achievements {
+main>section.content-panel>div.achievements{
   display: grid;
-  font-family: var(--inter);
-  font-weight: 400;
-  font-size: calc(var(--font-size-base) * 0.8);
   color: var(--text-white-700);
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
   gap: 1rem;
   text-transform: uppercase;
+}
+main>section.content-panel>div.achievements h2{
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: calc(var(--font-size-base) * 0.8);
 }
 
 main>section.content-panel>div.achievements>div::before {
