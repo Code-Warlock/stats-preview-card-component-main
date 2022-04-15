@@ -1,0 +1,183 @@
+/* Import variables */
+@import url('vars.css');
+
+/* Set up default values */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+main {
+  max-width: 70%;
+  max-height: 100%;
+  display: flex;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+}
+
+main>* {
+  flex: 1 1 50%;
+}
+
+main>section.content-panel {
+  font-size: var(--font-size-base);
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  padding: 3rem;
+  gap: 1.5rem;
+}
+
+main>section.content-panel>div.heading {
+  font-size: var(--font-size-h1);
+  font-family: var(--lexend);
+  font-weight: 700;
+  color: var(--text-white-900);
+  margin-bottom: 10px;
+}
+
+main>section.content-panel>div.heading>span.insights {
+  color: var(--accent);
+}
+
+main>section.content-panel>div.content {
+  font-family: var(--inter);
+  font-weight: 400;
+  color: var(--text-white-700);
+  font-size: calc(var(--font-size-base) * 1rem);
+  margin-bottom: 2.4rem;
+}
+
+main>section.content-panel>div.achievements {
+  display: grid;
+  font-family: var(--inter);
+  font-weight: 400;
+  font-size: calc(var(--font-size-base) * 0.8);
+  color: var(--text-white-700);
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+
+main>section.content-panel>div.achievements>div::before {
+  text-align: center;
+  font-family: var(--inter);
+  font-size: calc(var(--font-size-base) * 1.3);
+  font-weight: 700;
+  display: block;
+  content: attr(data-value);
+  color: var(--text-white-900);
+}
+
+main>section.preview {
+  background-color: var(--accent);
+  min-height: 100%;
+  align-self: stretch;
+}
+
+main>section.preview>picture {
+  mix-blend-mode: multiply;
+}
+
+@media screen and (max-width:700px) {
+  body {
+    padding: 30px;
+  }
+
+  main {
+    max-width: fit-content;
+    min-width: 70%;
+    max-height: 100%;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  main>section.preview {
+    min-height: 50%;
+    grid-row: 1;
+  }
+
+}
+
+@media screen and (max-width:390px) {
+  body {
+    width: auto;
+    height: auto;
+  }
+
+  main {
+    height: auto !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    align-content: center;
+    justify-content: center;
+    overflow-x: hidden;
+    grid-template-areas:
+      "p p p"
+      "c c c"
+      "c c c"
+      /* "c c c"
+      "c c c"
+      "c c c" */
+    ;
+  }
+
+  main>* {
+    max-width: 100%;
+  }
+
+  main>section.preview {
+    grid-area: p;
+  }
+
+  main>section.content-panel {
+    grid-area: c;
+    max-height: 60%;
+    padding: 2rem;
+    gap: 1rem;
+    /* overflow: hidden; */
+  }
+
+  main>section.content-panel>div.content {
+    margin-bottom: 2.3rem;
+  }
+
+  main>section.content-panel>div.achievements {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  main>section.content-panel>div.heading {
+    font-size: calc(var(--font-size-h1) / 1.3);
+  }
+
+  main>section.content-panel {
+    font-size: calc(var(--font-size-base) / 1.3);
+  }
+  main>section.content-panel>div.achievements {
+    font-size: calc(var(--font-size-base) / 1.3);
+  }
+  main>section.content-panel>div.achievements > div::before {
+    font-size: calc(var(--font-size-base) / 1.3);
+  }
+}
